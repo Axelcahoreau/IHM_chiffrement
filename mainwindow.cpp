@@ -1,27 +1,89 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-MainWindow::MainWindow(): QWidget()
+
+
+/**
+ * @brief MainWindow::MainWindow Constructeur de la classe
+ * @param parent
+ */
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent)
+    , ui(new Ui::MainWindow)
 {
-    this->compteur = 0;
-    setFixedSize(150, 100);
+    ui->setupUi(this);
 
-    monbouton = new QPushButton("bouton", this);
-    monbouton->move(10, 10);
-    monAffichage = new QLabel("0", this);
-    monAffichage->move(10, 50);
+    ui->octavia->hide();
+    ui->zr7->hide();
+    ui->lcdNumber->hide();
+    ui->horizontalSlider->hide();
 
-    connect(monbouton, SIGNAL(clicked()), this, SLOT(clicBouton()));
+    this->monCompteur = 0;
 }
 
 MainWindow::~MainWindow()
 {
+    delete ui;
+}
+
+
+void MainWindow::on_btnMoins_clicked()
+{
+    this->monCompteur--;
+    ui->lblAffichage->setText(QString::number(this->monCompteur));
+    ui->lblAffichage->adjustSize();
+}
+
+
+void MainWindow::on_btnPlus_clicked()
+{
+    this->monCompteur++;
+    ui->lblAffichage->setText(QString::number(this->monCompteur));
+    ui->lblAffichage->adjustSize();
 
 }
 
-void MainWindow::clicBouton()
+void MainWindow::on_pushButton_clicked()
 {
-    this->compteur++;
-    this->monAffichage->setText(QString::number(this->compteur));
-    this->monAffichage->adjustSize();
+    this->monCompteur = 0;
+    ui->lblAffichage->setText(QString::number(this->monCompteur));
+    ui->lblAffichage->adjustSize();
+
+}
+
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    this->close();
+}
+
+
+void MainWindow::on_pushButton_3_clicked()
+{
+ui->octavia->show();
+ui->zr7->hide();
+}
+
+
+void MainWindow::on_pushButton_5_clicked()
+{
+ui->zr7->show();
+ui->octavia->hide();
+ui->lcdNumber->show();
+ui->horizontalSlider->show();
+
+}
+
+void MainWindow::on_pushButton_4_clicked()
+{
+ui->octavia->hide();
+ui->zr7->hide();
+ui->lcdNumber->hide();
+ui->horizontalSlider->hide();
+
+}
+
+
+void MainWindow::on_lineEdit_textEdited(const QString &arg1)
+{
 }
 
