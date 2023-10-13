@@ -16,13 +16,13 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_btnMoins_clicked();
+  //  void on_btnMoins_clicked();
 
-    void on_btnPlus_clicked();
+   // void on_btnPlus_clicked();
 
 
 
-    void on_pushButton_clicked();
+   /* void on_pushButton_clicked();
 
     void on_pushButton_2_clicked();
 
@@ -35,6 +35,8 @@ private slots:
    // void on_horizontalSlider_sliderMoved(int position);
 
     void on_lineEdit_textEdited(const QString &arg1);
+*/
+    void on_Exit_clicked();
 
 private:
     Ui::MainWindow *ui;

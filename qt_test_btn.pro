@@ -22,3 +22,27 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../meslibrairie/cryptopp/x64/Output/release/ -lcryptlib
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../meslibrairie/cryptopp/x64/Output/debug/ -lcryptlib
+
+INCLUDEPATH += $$PWD/../meslibrairie/cryptopp
+DEPENDPATH += $$PWD/../meslibrairie/cryptopp
+
+
+win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/../meslibrairie/cryptopp/x64/Output/release/cryptlib.lib
+win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/../meslibrairie/cryptopp/x64/Output/debug/cryptlib.lib
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../meslibrairie/x64/release/ -lchiffrement1
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../meslibrairie/x64/debug/ -lchiffrement1
+
+INCLUDEPATH += $$PWD/../meslibrairie/chiffrement1
+DEPENDPATH += $$PWD/../meslibrairie/chiffrement1
+
+
+win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/../meslibrairie/x64/release/chiffrement1.lib
+win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/../meslibrairie/x64/debug/chiffrement1.lib
+
+RESOURCES += \
+    image/image.qrc
