@@ -24,11 +24,25 @@ private slots:
 
     void on_AES_clicked();
 
-    void on_RSAParcourir_clicked();
+    void on_AESchiffrer_clicked();
 
-    void on_SHA256Parcourir_clicked();
+    void on_AESdechiffrer_clicked();
 
-    void on_RSAParcourir_2_clicked();
+    void on_RSAchiffrer_clicked();
+
+    void on_RSAdechiffrer_clicked();
+
+    void on_SHA256fichier_clicked();
+
+    void on_RSAchargementclepv_clicked();
+
+    void on_RSAchargementclepu_clicked();
+
+    void on_RSAgenerer_clicked();
+
+    void on_AESchargementclepv_clicked();
+
+    void on_AESgenerer_clicked();
 
 private:
     Ui::MainWindow *ui;
