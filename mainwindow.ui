@@ -164,7 +164,7 @@ color: rgb(255, 255, 255);</string>
      <string>Choisir le Fichier a Crypté</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="RSAParcourir_2">
+   <widget class="QPushButton" name="AESParcourir">
     <property name="geometry">
      <rect>
       <x>130</x>

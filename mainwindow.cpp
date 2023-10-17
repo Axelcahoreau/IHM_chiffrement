@@ -38,6 +38,9 @@ void MainWindow::on_SHA256_clicked()
     ui->MODESHA256->show();
     ui->MODERSA->hide();
     ui->MODEAES->hide();
+    ui->RSAParcourir->hide();
+    ui->SHA256Parcourir->show();
+    ui->AESParcourir->hide();
 }
 
 
@@ -46,6 +49,9 @@ void MainWindow::on_RSA_clicked()
     ui->MODESHA256->hide();
     ui->MODERSA->show();
     ui->MODEAES->hide();
+    ui->RSAParcourir->show();
+    ui->SHA256Parcourir->hide();
+    ui->AESParcourir->hide();
 }
 
 
@@ -56,7 +62,7 @@ void MainWindow::on_AES_clicked()
     ui->MODEAES->show();
     ui->RSAParcourir->hide();
     ui->SHA256Parcourir->hide();
-    ui->MODEAES->show();
+    ui->AESParcourir->show();
 }
 
 void MainWindow::on_RSAParcourir_clicked()
