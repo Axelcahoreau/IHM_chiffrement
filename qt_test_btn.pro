@@ -46,3 +46,5 @@ win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/../meslibrairie/
 
 RESOURCES += \
     image/image.qrc
+
+DISTFILES +=

@@ -1,6 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>zr7777777.jpg</file>
-        <file>securité.jpg</file>
+        <file>securit.jpg</file>
+        <file>fondnoir.jpg</file>
     </qresource>
 </RCC>
